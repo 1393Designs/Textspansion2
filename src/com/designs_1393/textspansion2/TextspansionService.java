@@ -33,17 +33,19 @@ public class TextspansionService extends AccessibilityService
 		Log.i(TAG, "Last word  = \"" +lastInsertion +"\"");
 
 
-		if( firstText.charAt(fromIndex) == ' ' )
-		{
-			Log.i(TAG, "THAT WAS A SPACE");
+		//if( firstText.charAt(fromIndex) == ' ' )
+		//{
+		//	Log.i(TAG, "THAT WAS A SPACE");
 			if( lastInsertion.toLowerCase().equals("kotemf") )
 			{
 				String newString = firstText.substring(0, fromIndex)
 				                   + TARGET
 				                   + firstText.substring(fromIndex + addedCount);
 				Log.i(TAG, "New string = \"" +newString +"\"");
+
+				nodeInfo.setText(newString);
 			}
-		}
+		//}
 
 
 		Log.i(TAG, "-----\n");
