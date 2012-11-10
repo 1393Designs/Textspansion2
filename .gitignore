@@ -18,3 +18,6 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+
+# swap files for vim
+.*.sw[op]
