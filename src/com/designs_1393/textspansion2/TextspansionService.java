@@ -19,7 +19,7 @@ public class TextspansionService extends AccessibilityService
 		List<CharSequence> allTexts = event.getText();
 
 		/* So far, I've only seen a one-element List, so I'll just use that one */
-		CharSequence firstText = allTexts.get(0);
+		String firstText = allTexts.get(0).toString();
 
 		int fromIndex = event.getFromIndex();
 
