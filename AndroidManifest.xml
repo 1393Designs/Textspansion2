@@ -7,7 +7,8 @@
 	<uses-sdk android:targetSdkVersion="16" />
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
 		<service android:name=".TextspansionService"
-			android:label="Textspansion Accessibility Service">
+			android:label="Textspansion Accessibility Service"
+			android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
 			<intent-filter>
 				<action android:name="android.accessibilityservice.AccessibilityService" />
 			</intent-filter>
