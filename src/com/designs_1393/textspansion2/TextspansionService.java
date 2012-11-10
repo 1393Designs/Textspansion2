@@ -11,6 +11,7 @@ import java.util.List;
 public class TextspansionService extends AccessibilityService
 {
 	private final String TAG = "TextspansionService";
+	private final String TARGET = "Kick Out the Epic Motherfu**er";
 
 	@Override
 	public void onAccessibilityEvent(AccessibilityEvent event)
@@ -33,7 +34,17 @@ public class TextspansionService extends AccessibilityService
 
 
 		if( firstText.charAt(fromIndex) == ' ' )
+		{
 			Log.i(TAG, "THAT WAS A SPACE");
+			if( lastInsertion.toLowerCase().equals("kotemf") )
+			{
+				String newString = firstText.substring(0, fromIndex)
+				                   + TARGET
+				                   + firstText.substring(fromIndex + addedCount);
+				Log.i(TAG, "New string = \"" +newString +"\"");
+			}
+		}
+
 
 		Log.i(TAG, "-----\n");
 	}
