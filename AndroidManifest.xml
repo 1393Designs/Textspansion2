@@ -13,7 +13,7 @@
 			</intent-filter>
 			<meta-data
 				android:name="android.accessibilityservice"
-				android:resources="@xml/accessibility_service_config" />
+				android:resource="@xml/accessibility_service_config" />
 		</service>
 		<uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" />
 
