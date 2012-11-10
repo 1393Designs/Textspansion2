@@ -2,6 +2,7 @@ package com.designs_1393.textspansion2;
 
 import android.accessibilityservice.AccessibilityService;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
 
 import android.util.Log;
 
@@ -16,6 +17,10 @@ public class TextspansionService extends AccessibilityService
 	@Override
 	public void onAccessibilityEvent(AccessibilityEvent event)
 	{
+		/* Get the NodeInfo that contains information about the event's source */
+		AccessibilityNodeInfo nodeInfo = event.getSource();
+
+
 		/* getText returns a List of CharSequences */
 		List<CharSequence> allTexts = event.getText();
 
@@ -46,6 +51,8 @@ public class TextspansionService extends AccessibilityService
 				nodeInfo.setText(newString);
 			}
 		//}
+
+		nodeInfo.recycle();
 
 
 		Log.i(TAG, "-----\n");
